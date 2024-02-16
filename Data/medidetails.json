@@ -1,0 +1,472 @@
+[
+    {
+      "name": "paracetamol",
+      "uses": ["Headache","Tension headache","Backache","Fever (pyrexia)"],
+      "side_effects": ["Skin rashes", " itching","Shortness of breath","Swelling of the throat"]
+    },
+    {
+      "name": "dolo 650",
+      "uses": ["Pain relief","Treatment of Fever"],
+      "side_effects": ["Stomach pain","Nausea","Vomiting"]
+    },
+    {
+        "name": "panadol",
+        "uses": ["pain relief", "Treatment of Fever"],
+        "side_effects": ["Skin rash", "itching", "blisters"]
+    },
+    {
+      "name": "brufen 400mg",
+      "uses": ["Pain", "inflammation"],
+      "side_effects": ["Stomach pain","diarrhea","gas"]
+    },
+    {
+      "name": "Brufen 200mg",
+      "uses": ["Pain", "inflammation"],
+      "side_effects": ["Stomach pain","diarrhea","gas"]
+    },
+    {
+      "name": "amoxil",
+      "uses": ["Bacterial infections"],
+      "side_effects": ["Diarrhoea","nausea","vomiting","rashes"]
+    },
+    {
+      "name": "ampiclox",
+      "uses": ["Bacterial infections"],
+      "side_effects": ["Allergic reaction","Rash","Stomach pain","Nausea","Diarrhea"]
+    },
+    {
+      "name": "flagyl 400mg",
+      "uses": ["Treatment of Bacterial infections","Treatment of Parasitic infections"],
+      "side_effects": ["Headache","Dryness in mouth","Nausea","Metallic taste"]
+    },
+    {
+      "name": "disprin",
+      "uses": ["Headache","pain","fever"],
+      "side_effects": ["Nausea", "rash"]
+    },
+    {
+      "name": "ceefix",
+      "uses": ["Bacterial infections"],
+      "side_effects": ["Diarrhoea","nausea","vomiting","stomach pain"]
+    },
+    {
+      "name": "azithromycin",
+      "uses": ["Bacterial infections"],
+      "side_effects": ["Dizziness","breathing difficulty","headache","irregular heart beat"]
+    },
+    {
+      "name": "Augmentin 375mg",
+      "uses": ["Bacterial infections"],
+      "side_effects": ["Nausea","vomiting","diarrhoea","headache"]
+    },
+    {
+      "name": "diclofenac sodium",
+      "uses": ["to treat aches and pains","as well as problems with joints,muscles and bones"],
+      "side_effects": ["heart disease","high blood pressure","ulcers or bleeding in your stomach","asthma","liver or kidney disease"]
+    },
+    {
+      "name": "celecoxib",
+      "uses": ["Treatment of Rheumatoid arthritis","Treatment of Osteoarthritis"],
+      "side_effects": ["stomach pain","heartburn","gas","diarrhea","constipation","vomiting"]
+    },
+    {
+      "name": "strepsils",
+      "uses": ["For the symptomatic relief of mouth and throat infections","dry,irritating cough associated with the common cold and nasal congestion", "Use"],
+      "side_effects": ["Strepsils Lozenges for Adults and Children Over Six can cause side effects, although not everybody gets them. Side effects may include rash, stomach pain, feeling sick, oral discomfort, allergic reaction."]
+    },
+    {
+      "name": "multivitamin",
+      "uses": ["to treat or prevent vitamin deficiency due to poor diet, certain illnesses, or during pregnancy. "],
+      "side_effects": ["tooth staining","increased urination","uneven heart rate","confusion", "SideEffect"]
+    },
+    {
+      "name": "Meftal Spas",
+      "uses": ["Abdominal pain","period related pain"],
+      "side_effects": ["Dizziness","dry mouth","headache"]
+    },
+    {
+      "name": "Rantac 150mg",
+      "uses": ["Acidity","heartburn"],
+      "side_effects": ["Headache","itching","rashes or fever"]
+    },
+    {
+      "name": "cimetidine",
+      "uses": ["Decreased level of consciousness"],
+      "side_effects": ["Diarrhoea","stomach pain","dizziness","headache","rashes"]
+    },
+    {
+      "name": "famotidine",
+      "uses": ["treatment of gastroesophageal reflux disease (acid reflux)","peptic ulcer disease","heartburn"],
+      "side_effects": ["Headache","Diarrhea","Drowsiness","Constipation"]
+    },
+    {
+      "name": "Nucort Forte",
+      "uses": ["Allergies","infalmmation","infection","cancer","organ transplant"],
+      "side_effects": ["Irritation","weight gain","infections","bloating"]
+    },
+    {
+      "name": "flurbiprofen",
+      "uses": ["relieve pain","tenderness","swelling","stiffness"],
+      "side_effects": ["headache","nervousness or anxiety", "depression","memory problems"]
+    },
+    {
+      "name": "Tranesma ",
+      "uses": ["Excessive bleeding"],
+      "side_effects": ["Diarrhoea","vomiting","nausea"]
+    },
+    {
+      "name": "omeprazole",
+      "uses": ["Acidity","heartburn","stomach ulcers"],
+      "side_effects": ["Headache","nausea","vomiting"]
+    },
+    {
+      "name": "domperidone",
+      "uses": ["used in the treatment of indigestion","nausea","vomiting"],
+      "side_effects": ["Dryness in mouth"]
+    },
+    {
+      "name": "amlodipine besilate",
+      "uses": ["used in the treatment of Hypertension (high blood pressure)","Angina (heart-related chest pain)"],
+      "side_effects": ["Headache","Nausea","Abdominal pain","Flushing (sense of warmth in the face, ears, neck and trunk)","Dizziness","Palpitations","Edema (swelling)", "SideEffect"]
+    },
+    {
+      "name": "propranolol",
+      "uses": ["used in the treatment of Pheochromocytoma","Hypertension (high blood pressure)"],
+      "side_effects": ["Slow heart rate","Nightmares","Cold extremities","Fatigue","Sleep disturbance","SideEffect"]
+    },
+    {
+      "name": "glucophage",
+      "uses": ["used for type 2 diabetes mellitus (‘non-insulin dependent diabetes’) when diet and exercise have not been able to control your blood glucose levels"],
+      "side_effects": ["Stomach pain","Altered taste sensations","Loss of appetite","Vitamin B12 deficiency (low level of vitamin B12 in blood","Skin rash","redness","itching","Lactic acidosis (too much acid in the body)","Abnormal liver function tests and hepatitis"]
+    },
+    {
+      "name": "daonil",
+      "uses": ["Type 2 diabetes mellitus"],
+      "side_effects": ["Headache","dizziness","nausea","low blood sugar level"]
+    },
+    {
+      "name": "Loratadine",
+      "uses": ["used in the treatment of allergic conditions"],
+      "side_effects": ["Sleepiness","Headache","Increased appetite"]
+    },
+    {
+      "name": "fluteez",
+      "uses": ["Common cold"],
+      "side_effects": ["Dryness in mouth","Upset stomach","Fatigue","Dizziness","Sleepiness","Allergic reaction"]
+    },
+    {
+      "name": "Avil",
+      "uses": ["Treatment of Allergic conditions","Treatment of Respiratory disease with excessive mucus","Treatment of Skin conditions with inflammation & itching","Treatment and prevention of Meniere's disease"],
+      "side_effects": ["Sedation"]
+    },
+    {
+      "name": "Tablet3",
+      "uses": ["Use", "Use"],
+      "side_effects": ["SideEffect", "SideEffect"]
+    },
+    {
+      "name": "Montelukast",
+      "uses": ["used to prevent sneezing and runny nose due to allergies"],
+      "side_effects": ["Headache","Diarrhea","Abdominal pain","Fever","Upper respiratory tract infection", "SideEffect"]
+    },
+    {
+      "name": "alprazolam",
+      "uses": ["used in the treatment of Anxiety and Panic disorder"],
+      "side_effects": ["Memory impairment","Sleepiness","Nausea","Constipation","Difficulty in speaking","Impaired coordination"]
+    },
+    {
+      "name": "Betamethasone",
+      "uses": ["used in the treatment of allergic conditions"],
+      "side_effects": ["Weight gain","Mood changes","Behavioral changes","Itching","Burning sensation","Bruising","Headache"]
+    },
+    {
+      "name": "bromazepam",
+      "uses": ["to treat panic disorders and severe anxiety"],
+      "side_effects": ["behaviour changes","confusion","dizziness"]
+    },
+    {
+      "name": "gravinate",
+      "uses": ["Treatment of Nausea and vomiting in pregnancy"],
+      "side_effects": ["Dryness in mouth","Constipation","Lightheadedness","Drowsiness"]
+    },
+    {
+      "name": "Monocef-O",
+      "uses": ["Treatment of Bacterial infections"],
+      "side_effects": ["Rash","Nausea","Diarrhea"]
+    },
+    {
+      "name": "Taxim",
+      "uses": ["Treatment of Bacterial infections"],
+      "side_effects": ["Nausea","Stomach pain","Indigestion","Diarrhea"]
+    },
+    {
+      "name": "app-up syrup",
+      "uses": ["Appetite stimulant"],
+      "side_effects": ["Dizziness","diarrhoea","constipation","rashes"]
+    },
+    {
+      "name": "Pan-D",
+      "uses": ["Treatment of Gastroesophageal reflux disease (Acid reflux)","Treatment of Indigestion","Treatment of Gastritis"],
+      "side_effects": ["Stomach pain","Flatulence","Dizziness","Headache"]
+    },
+    {
+      "name": "Domperidone",
+      "uses": [" used in the treatment of indigestion, nausea and vomiting"],
+      "side_effects": ["Dryness in mouth"]
+    },
+    {
+      "name": "pantop DSR",
+      "uses": ["Acidity, heartburn"],
+      "side_effects": ["Diarrhoea","dry mouth","headache","weakness","rashes","nausea"]
+    },
+    {
+      "name": "Pantop D",
+      "uses": ["Acidity, heartburn"],
+      "side_effects": ["Diarrhoea","dry mouth","headache","weakness"]
+    },
+    {
+      "name": "Diclofenac",
+      "uses": [" used for pain relief. It relieves pain in conditions like headache, mild migraine, muscle pain, dental pain, rheumatoid arthritis, ankylosing spondylitis, osteoarthritis, or painful menses."],
+      "side_effects": ["Dizziness","Vomiting","Flatulence","Constipation","Diarrhea","Abdominal pain","Dyspepsia","Gastrointestinal bleeding"]
+    },
+    {
+      "name": "Avil amp",
+      "uses": ["Treatment of Allergic conditions","Treatment of Respiratory disease with excessive mucus","Treatment of Skin conditions with inflammation & itching","Treatment and prevention of Meniere's disease"],
+      "side_effects": ["Most side effects do not require any medical attention and disappear as your body adjusts to the medicine."]
+    },
+    {
+      "name": "Betnovate-C Cream",
+      "uses": ["Treatment of Bacterial skin infections","Treatment of Fungal skin infections","Treatment of Skin conditions with inflammation & itching"],
+      "side_effects": ["Most side effects do not require any medical attention and disappear as your body adjusts to the medicine. Consult your doctor if they persist or if you’re worried about them"]
+    },
+    {
+      "name": "betnovate-n cream",
+      "uses": ["Treatment of Bacterial skin infections"],
+      "side_effects": ["Burning sensation","Itching"]
+    },
+    {
+      "name": "Skin shine Cream",
+      "uses": ["Treatment of Melasma"],
+      "side_effects": ["Most side effects do not require any medical attention and disappear as your body adjusts to the medicine. Consult your doctor if they persist or if you’re worried about them"]
+    },
+    {
+      "name": "Sipderm Plus Cream",
+      "uses": ["Treatment of Skin infections"],
+      "side_effects": ["Most side effects do not require any medical attention and disappear as your body adjusts to the medicine. Consult your doctor if they persist or if you’re worried about them"]
+    },
+    {
+      "name": "Gentop 80mg Lotion",
+      "uses": ["Bacterial skin infections"],
+      "side_effects": ["Most side effects do not require any medical attention and disappear as your body adjusts to the medicine. Consult your doctor if they persist or if you’re worried about them"]
+    },
+    {
+      "name": "Gentamycin Injection",
+      "uses": ["Treatment of Bacterial infections"],
+      "side_effects": ["Most side effects do not require any medical attention and disappear as your body adjusts to the medicine. Consult your doctor if they persist or if you’re worried about them","Hearing loss","Kidney damage","Balance disorder (loss of balance)","Injection site pain"]
+    },
+    {
+      "name": "brugel",
+      "uses": ["Pain relief"],
+      "side_effects": ["No common side effects seen"]
+    },
+    {
+      "name": "dulcoflex",
+      "uses": ["Treats constipation","Used for the preparation of diagnostic procedures, in pre-and postoperative treatment, and in conditions that require defecation to be facilitated"],
+      "side_effects": ["Dulcoflex tablets may cause abdominal cramps or pain, diarrhea, or nausea in some individuals. Consult your physician if you notice any such side effects while taking these tablets."]
+    },
+    {
+      "name": "dynapar",
+      "uses": ["Pain relief"],
+      "side_effects": ["Dynapar Tablet is a combination of two medicines: Diclofenac and Paracetamol. These medicines work by blocking the action of chemical messengers responsible for pain, fever and inflammation (redness and swelling)"]
+    },
+    {
+      "name": "omnocortil",
+      "uses": ["Treatment of Severe allergic reactions","Treatment of Allergic conditions","Treatment of Rheumatic disorder","Treatment of Skin disorders","Treatment of Eye disorders","Treatment of Nephrotic syndrome"],
+      "side_effects": ["Reduction in bone density","Upset stomach","Behavioral changes","Mood changes","Weight gain"]
+    },
+    {
+      "name": "telma 80mg",
+      "uses": ["Treats essential hypertension (high blood pressure)","Reduces the risk of cardiovascular events (such as stroke and heart attack)"],
+      "side_effects": ["low blood pressure"]
+    },
+    {
+      "name": "Telismart H 40",
+      "uses": ["used in the treatment of high blood pressure when one medicine alone is unable to control the blood pressure effectively"],
+      "side_effects": ["Nausea","Vomiting","Diarrhoea","Stomach pain","Headache","Dizziness"]
+    },
+    {
+      "name": "Glimirep-4",
+      "uses": ["Metabolic disorders: weight gain, low blood sugar level which can cause headache, sweating, nausea, wet skin, anxiety and restlessness"],
+      "side_effects": ["Rash","Nausea","Diarrhea"]
+    },
+    {
+      "name": "telixia-40H",
+      "uses": ["Treatment of Hypertension (high blood pressure)"],
+      "side_effects": ["Fatigue","Dizziness","Nausea","Decreased magnesium level in blood"]
+    },
+    {
+      "name": "Diziron",
+      "uses": ["Treatment of Motion sickness","Treatment of Vertigo","Treatment of Meniere's disease"],
+      "side_effects": ["Sleepiness","Nausea","Weight gain","Indigestion"]
+    },
+    {
+      "name": "Dart",
+      "uses": ["Headache","Body ache","Fever","Backache","Migraine","Dental pain"],
+      "side_effects": ["Skin rash","Urticaria"]
+    },
+    {
+      "name": "Pantosec",
+      "uses": ["Treatment of Heartburn","Treatment of Gastroesophageal reflux disease (Acid reflux)","Treatment of Peptic ulcer disease","Treatment of Zollinger-Ellison syndrome"],
+      "side_effects": ["Flatulence","Headache","Nausea","Stomach pain","Vomiting","Dizziness"]
+    },
+    {
+      "name": "rabeprazole",
+      "uses": ["Treatment of Gastroesophageal reflux disease (Acid reflux)","Treatment of Peptic ulcer disease","Treatment of Zollinger-Ellison syndrome"],
+      "side_effects": ["Flatulence","Headache","Nausea","Sore throat","Stomach pain"]
+    },
+    {
+      "name": "ranitin",
+      "uses": ["GERD and peptic ulcer"],
+      "side_effects": ["Pain","redness or swelling at the injection site","headache"]
+    },
+    {
+      "name": "Benadryl Syrup",
+      "uses": ["Treatment of Cough"],
+      "side_effects": ["Stomach pain/epigastric pain","Dizziness","Sleepiness","Impaired coordination","Thickened respiratory tract secretions"]
+    },
+    {
+      "name": "Antiderm XL Ointment",
+      "uses": ["Treatment of Skin infections"],
+      "side_effects": ["Application site reactions (burning, irritation, itching and redness)"]
+    },
+    {
+      "name": "Burnol Cream 10gm",
+      "uses": ["Burns","cuts","wounds"],
+      "side_effects": ["Redness","itching","irrtation"]
+    },
+    {
+      "name": "Coldact Capsule",
+      "uses": ["Treatment of Common cold"],
+      "side_effects": ["Sleepiness","Headache","Dizziness","Nervousness","Restlessness"]
+    },
+    {
+      "name": "Flucold Syrup",
+      "uses": ["Common cold"],
+      "side_effects": ["Tachycardia","Dizziness"]
+    },
+    {
+      "name": "Cheston Cold Tablet",
+      "uses": ["Treatment of Common cold"],
+      "side_effects": ["Vomiting","Headache","Fatigue","Dizziness","Dryness in mouth"]
+    },
+    {
+      "name": "Eofil Forte",
+      "uses": ["Parasitic infections"],
+      "side_effects": ["Nausea","Loss of appetite","Sleepiness","Headache","Allergic reaction"]
+    },
+    {
+      "name": "Enteroquinol 250mg Tablet",
+      "uses": ["Treatment of Worm infections","Treatment of Intestinal amoebiasis"],
+      "side_effects": ["Headache","Nausea","Vomiting","Abnormal liver function tests","Fever"]
+    },
+    {
+      "name": "Zenflox 200",
+      "uses": ["Treatment of Bacterial infections"],
+      "side_effects": ["Dizziness","Itching","Insomnia (difficulty in sleeping)","Rash","Genital itching"]
+    },
+    {
+      "name": "Suganril",
+      "uses": ["Pain and inflammation"],
+      "side_effects": ["Dizziness, drowsiness, stomach pain, diarrhoea"]
+    },
+    {
+      "name": "Cefix-O Tablet",
+      "uses": ["Treatment of Bacterial infections"],
+      "side_effects": ["nausea","loose stools","abdominal pain"]
+    },
+    {
+      "name": "Albendazole",
+      "uses": ["treatment of Parasitic infections"],
+      "side_effects": ["Increased liver enzymes","Nausea","Headache","Hair loss","Fever","Abdominal pain"]
+    },
+    {
+      "name": "Candid-B Cream",
+      "uses": ["Treatment of Fungal skin infections"],
+      "side_effects": ["Paresthesia (tingling or pricking sensation)","Burning sensation","Dry skin"]
+    },
+    {
+      "name": "Formosone 250 CFC Free Inhaler",
+      "uses": ["Treatment of Chronic obstructive pulmonary disease (COPD)"],
+      "side_effects": ["Upper respiratory tract infection","Nasopharyngitis (inflammation of the throat and nasal passages)","Sinus inflammation","Stomach discomfort"]
+    },
+    {
+      "name": "Nicip Tablet",
+      "uses": ["Treatment of Fever","Pain relief"],
+      "side_effects": ["Nausea","Vomiting","Diarrhea","Increased liver enzymes"]
+    },
+    {
+      "name": "Brufen 400 Tablet",
+      "uses": ["Pain relief","Treatment of Fever"],
+      "side_effects": ["Abdominal pain","Constipation","Flatulence","Diarrhea","Dyspepsia"]
+    },
+    {
+      "name": "Floxip 500 Tablet",
+      "uses": ["Treatment of Bacterial infections"],
+      "side_effects": ["Headache","Dizziness","Gastrointestinal disorder","Joint pain"]
+    },
+    {
+      "name": "Fenak Plus Tablet",
+      "uses": ["Pain relief"],
+      "side_effects": ["Vomiting","Stomach pain/epigastric pain","heartburn","Diarrhea"]
+    },
+    {
+      "name": "Rantac Syrup",
+      "uses": ["Treatment of Gastroesophageal reflux disease (Acid reflux)","Treatment of Peptic ulcer disease"],
+      "side_effects": ["Headache","Diarrhea","Gastrointestinal disturbance"]
+    },
+    {
+      "name": "omee syrup",
+      "uses": ["Acidity","Stomach ulcers","Bloating"],
+      "side_effects": ["Constipation","Diarrhea"]
+    },
+    {
+      "name": "omee tablet",
+      "uses": ["Treatment of Heartburn","Treatment of Gastroesophageal reflux disease (Acid reflux)","Treatment of Peptic ulcer disease","Treatment of Zollinger-Ellison syndrome"],
+      "side_effects": ["Flatulence","Headache","Nausea","Vomiting","Abdominal pain"]
+    },
+    {
+      "name": "Flublast Nasal Solution",
+      "uses": ["Nasal congestion (blocked nose)"],
+      "side_effects": ["Burning sensation","Dry nose","Headache","Nausea"]
+    },
+    {
+      "name": "Ceflox-D Eye/Ear Drops",
+      "uses": ["Treatment of Bacterial eye / ear infections"],
+      "side_effects": ["Eye irritation","Irritation of ear","Eye discomfort","Ear discomfort"]
+    },
+    {
+      "name": "Happi-D",
+      "uses": ["Treatment of Gastroesophageal reflux disease (Acid reflux)"],
+      "side_effects": ["Stomach pain","Dryness in mouth","Headache","Dizziness","Flatulence"]
+    },
+    {
+      "name": "mahacef-cv",
+      "uses": ["Treatment of Bacterial infections"],
+      "side_effects": ["Nausea","Diarrhea","Stomach pain","Indigestion","Flatulence"]
+    },
+    {
+      "name": "sumo gel ointment",
+      "uses": ["treatment of pain","swelling and inflammation due to muscle","joint and bone-related disorders"],
+      "side_effects": ["experience any skin reactions such as rashes, itching and irritation after application of this Gel"]
+    },
+    {
+      "name": "omnigel",
+      "uses": ["Low back pain","Shoulder pain and stiff neck","Joint pain","Sports injury (sprain and strain)"],
+      "side_effects": ["rash","hives","itching","difficulty breathing"]
+    },
+    {
+      "name": "saridon tablet",
+      "uses": ["Treat headaches"],
+      "side_effects": ["Nausea","Abdominal pain"]
+    }
+]

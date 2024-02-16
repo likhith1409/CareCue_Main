@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"/>
+       
+
+        <!-- =============== CSS =============== -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+        <title>CareCue</title>
+
+        <!-- =============== FAVICON =============== -->
+        <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
+
+        
+    </head>
+    <body>
+        
+        <!--=============== HEADER ===============-->
+        <header class="header" id="header">
+            <div class="progress-container">
+              <div class="progress-bar" id="myBar"></div>
+            </div>  
+              
+            <nav class="nav container">
+                <a href="#" class="nav__logo">CareCue</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About Us</a>
+                        </li>
+
+                        <li class="nav__item dropdown">
+                          <div class="nav__link">Features<i class="bx bx-chevron-down"></i></div>
+                          <ul class="dropdown-content">
+                            <li><a href="#scanner">Medicine Scanner</a></li>
+                            <li><a href="#chatbot">ChatBot</a></li>
+                            <li><a href="#maps">Hospital Maps</a></li>
+                          </ul>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact Us</a>
+                        </li>
+
+                        <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
+                        <!-- Inside the <nav> element -->
+                        <button id="loginSignupButton" class="nav__button1" onclick="toggleLoginSignup()">Login / Signup</button>
+                        <div id="userDropdown" class="nav__user-dropdown">
+                          <div class="nav__user-container">
+                              {% if 'user' in session %}
+                                  <label id="userLabel" class="nav__user-label" style="display: none;">{{ session['user']['name'] }}</label>
+                              {% else %}
+                                  <label id="userLabel" class="nav__user-label" style="display: none;"></label>
+                              {% endif %}
+                      
+                              <div class="nav__user-options" style="display: none;">
+                                  <button onclick="logout()">Logout</button>
+                              </div>
+                          </div>
+                        </div>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+
+                          
+                    </ul>
+                </div>
+            </nav>
+            <!-- Update the login form -->
+            <!-- Update the login form -->
+            <div id="loginModal" class="modal">
+              <div class="modal-content">
+                  <span class="close" onclick="closeLogin()">&times;</span>
+                  <h2>Login</h2>
+                  <form id="loginForm" onsubmit="return login()">
+                      <div class="form-group">
+                          <label for="email">Email:</label>
+                          <input type="email" id="email" name="email" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="password">Password:</label>
+                          <input type="password" id="password" name="password" required>
+                      </div>
+
+                      <div class="form-group forgot-password">
+                          <a href="#">Forgot Password?</a>
+                      </div>
+
+                      <div class="form-group">
+                          <button type="submit">Login</button>
+                          <p id="loginError" class="error-message"></p>
+                      </div>
+                  </form>
+
+                  <div class="form-group signup-link">
+                      Don't have an account? <a href="#" onclick="openSignup()">Sign up</a>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Update the signup form -->
+            <div id="signupModal" class="modal">
+              <div class="modal-content">
+                  <span class="close" onclick="closeSignup()">&times;</span>
+                  <h2>Sign Up</h2>
+                  <form id="signupForm" onsubmit="return signup()">
+                      <div class="form-group">
+                          <label for="signupName">Name:</label>
+                          <input type="text" id="signupName" name="signupName" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="signupEmail">Email:</label>
+                          <input type="email" id="signupEmail" name="signupEmail" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="signupPassword">Password:</label>
+                          <input type="password" id="signupPassword" name="signupPassword" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="confirmPassword">Confirm Password:</label>
+                          <input type="password" id="confirmPassword" name="confirmPassword" required>
+                      </div>
+
+                      <div class="form-group">
+                          <button type="submit">Sign Up</button>
+                          <p id="signupError" class="error-message"></p>
+                      </div>
+                  </form>
+
+                  <div class="form-group login-link">
+                      Already have an account? <a href="#" onclick="openLogin()">Login</a>
+                  </div>
+              </div>
+            </div>
+
+
+          
+            
+        </header>
+
+        <main class="main">
+            <!--=============== HOME ===============-->
+
+            <section class="home section" id="home">
+ 
+                <div class="rounded-box" onclick="expandContent()">
+                    <h2>News:</h2>
+                    <div id="newsContainer">
+                        
+                            <strong id="headline">{{ health_news[current_index].headline }}</strong>
+                            <div id="expandedContent" style="display: none;">
+                                Description: <span id="description">{{ health_news[current_index].description }}</span><br><br>
+                                Source: <span id="source">{{ health_news[current_index].source }}</span><br>
+                                Link: <a id="link" href="{{ health_news[current_index].link }}" target="_blank">{{ health_news[current_index].link }}</a><br><br>
+                            </div>
+                        
+                    </div>
+                </div>
+            
+        
+                       
+                <div class="home__container container grid">
+                    <img src="static/images/logo2.png" alt="">
+
+                    <div class="home__data">
+                        <h1 class="home__title">CareCue</h1>
+                        <p class="home__description">Guiding Your Health Journey with Precision and Compassion: CareCue, Where Wellness Finds a Path</p>
+
+                        <a href="#services" class="button">Get Started!</a>
+
+                    </div>   
+                </div>
+            </section>
+
+            <!--=============== ABOUT ===============-->
+            <section class="about section container" id="about">
+              <div class="about__container grid">
+                <div class="about__data">
+                    <h2 class="section__title-center">Find Out A Little More <br> About Us</h2> <br>
+                    <p class="about__description">
+                        Welcome to CareCue  Your Compassionate Health Companion
+
+At CareCue, we believe in empowering individuals on their journey towards optimal well-being. Our mission is to provide a seamless and personalized healthcare experience that goes beyond conventional boundaries.
+                    </p>
+                </div>
+                <div class="card">
+                  <p class="card-title">Did You Know...</p>
+                  <p class="small-desc">
+                    <ul>
+                      <li>&#8226; Laughing is good for the heart and can increase blood flow by 20 percent.</li>
+                      <li>&#8226; Gardening can be an effective way to build strength throughout your body.</li>
+                    </ul>
+                  </p>
+                  
+                  <div class="go-corner">
+                    <div class="go-arrow">→</div>
+                  </div>
+                </div>              
+            </section>
+
+            <!--=============== SERVICES ===============-->
+            <section class="services section container" id="scanner">
+                <div class="services__container grid">
+                    
+                </div>
+            </section>
+
+            <!--=============== APP ===============-->
+            <section class="team section container" id="Team">
+              
+              <div class="about__container grid">
+                
+                <div class="about__data">
+                  <h2 class="section__title-center">Medicine Scanner</h2> <br>
+                  <p class="about__description">
+                    Explore the capabilities of our advanced Tablet Information Retrieval System. Whether you choose to upload an image of the tablet or simply enter its name, our feature allows you to effortlessly obtain detailed information about the medicine. The process is quick and intuitive, providing you with instant access to crucial details such as uses and side effects.
+                  </p>
+                </div>
+
+                <div class="inputmed">
+                    <form class="inputmed-form" onsubmit="return false;">
+                        <label for="medicineName">Medicine Name:</label>
+                        <input type="text" id="medicineName" name="medicineName" placeholder="Enter medicine name" value="Paracetamol">
+                        <button type="button" onclick="getMedicineDetails()">Get Details</button>
+                    </form>
+                    <div id="medicineDetails">
+                        <h3>Medicine Details:</h3>
+                        <p><strong>Uses:</strong> <span id="uses"></span></p>
+                        <p><strong>Side Effects:</strong> <span id="sideEffects"></span></p>
+                    </div>
+                </div>
+            
+                <div class="wrapper">
+                  <section class="team section container" id="Team">
+                    <div class="about__container grid">
+                      
+                
+                      <div class="file-upload-container">
+                        <form class="file-upload-form">
+                          <label for="file" class="file-upload-label">
+                            <div class="file-upload-design">
+                              <svg viewBox="0 0 640 512" height="1em">
+                                <path
+                                  d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
+                                ></path>
+                              </svg>
+                              <p>Drag and Drop</p>
+                              <p>or</p>
+                              <span class="browse-button">Browse file</span>
+                            </div>
+                            <input id="file" type="file" />
+                          </label>
+                        </form>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                            
+              
+              
+              
+                  
+              </section>
+              
+              
+                   
+               
+            
+            </section>
+            <!--===============chatbot====================-->
+            <section class="services section container" id="chatbot">
+               <div class="services__container grid">
+                  <!-- chatbox.html -->
+                  <div class="chatbot_container">
+                    <div class="chat-header">
+                        <h2>CareCue Bot</h2>
+                        <!-- Add buttons here -->
+                        <div class="chat-buttons">
+                          <button class="chart-button" id="normalChart">Normal Chat</button>
+                          <button class="chart-button0" id="symptomChart">Symptom Chat</button>
+                          <button class="chart-button1" id="logoChart">
+                              <span class="chart_button-text">Chat With</span>
+                              <img src="static/images/OpenAi.png" alt="Logo" class="chat_button-logo">
+                          </button>
+                        </div>
+                    </div>
+                    <script>
+                      window.onload = function() {
+                          document.getElementById('normalChart').addEventListener('click', function() {
+                              document.getElementById('chatbox').innerHTML = '<p>You are in Normal Chat mode.</p>';
+                          });
+                      
+                          document.getElementById('symptomChart').addEventListener('click', function() {
+                              document.getElementById('chatbox').innerHTML = '<p>You are in Symptom Chat mode.</p>';
+                          });
+                      
+                          document.getElementById('logoChart').addEventListener('click', function() {
+                              document.getElementById('chatbox').innerHTML = '<p>You are in Logo Chat mode.</p>';
+                          });
+                      }
+                    </script>
+                    <div class="chatbox" id="chatbox">
+                      <!-- Chat messages will be displayed here -->
+                      <div class="message-container bot-container">
+                        <div class="message bot-message">Hello! I'm CareCue Bot. How can I assist you today?</div>
+                      </div>
+                      <div class="message-container user-container">
+                        <div class="message user-message">Hi</div>
+                      </div>
+                    </div>
+
+                  
+                    <div class="input-box">
+                        <input type="text" id="userInput" placeholder="Type your message...">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+                
+                
+             
+            
+                
+
+                
+               </div>
+               <div class="services__container grid">
+                  <div class="custom-card">
+                    <div class="custom-content">
+                      <div class="custom-title">CareCue Voice Assistent</div>
+                      
+                      <div class="custom-description">Click the link below to start a conversation with our intelligent healthcare voice assistant. Whether you have health-related questions, need assistance with medication information, or simply want to stay updated on the latest health tips, our voice assistant is here to help. Experience a hands-free and personalized approach to healthcare interaction. Your well-being is just a click away.</div>
+                    </div>
+                    <button class="custom-button" onclick="openHtmlPage('voice.html')">
+                      Click Here
+                    </button>
+
+                  </div>
+               </div>
+              
+              <!--==============Voice assistent===============================-->
+               
+
+            </section>
+
+            <!--=============== CONTACT US ===============-->
+            <section class="contact section container" id="contact">
+                <div class="contact__container grid">
+                    <div class="contact__content">
+                        <h2 class="section__title-center">Contact Us</h2> <br>
+                        <p class="contact__description">We'd love to hear from you! Whether you have a question, feedback, or want to collaborate, our team is here to assist. Reach out to us using the contact information below</p>
+                    </div>
+
+                    <ul class="contact__content grid">
+                        <li class="contact__address">Email:  <span class="contact__information">algoexpo123@gmail.com</span></li>
+                        <li class="contact__address">Location: <span class="contact__information">Telangana - India</span></li>
+                    </ul>
+
+                    <div class="contact__content">
+                        <a href="https://github.com/" class="button">Contact Us</a>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <!--=============== FOOTER ===============-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">CareCue</a>
+                    <p class="footer__description">Ready to explore?</p>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Our Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="https://github.com/" class="footer__link">Support </a></li>
+                        <li><a href="#" class="footer__link">Machine Learning</a></li>
+                        <li><a href="#" class="footer__link">Deep Learning</a></li>
+                        <li><a href="#" class="footer__link">Artificial Intelligence</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Community</h3>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Support</a></li>
+                        <li><a href="https://github.com/" class="footer__link">Questions</a></li>
+                        <li><a href="#" class="footer__link">Discord</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link"><i class='bx bxl-facebook-circle '></i></a>
+                    <a href="https://github.com/" class="footer__social-link"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.instagram.com/" class="footer__social-link"><i class='bx bxl-instagram-alt'></i></a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; CareCue. All right reserved</p>
+        </footer>
+
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+        </a>
+
+        <!--=============== MAIN JS ===============-->
+        
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  
+    </body>
+</html>

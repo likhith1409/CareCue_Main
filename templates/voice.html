@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>CareCue VoiceAi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap: -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+  <!-- jquery: -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- so it can talk back: -->
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+  <!-- so it can geolocate, even in codepen: -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+  <!-- local files: -->
+  <link rel='stylesheet' href='voice.css' />
+  <script type="text/javascript" src="brain.js" ></script>
+  <script type="text/javascript" src="ear.js" ></script>
+  <script type="text/javascript" src="add-on.js" ></script>
+</head>
+
+<body onload="welcome()">
+  <div class="center">
+    
+    <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+      <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+      <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+      <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+      <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+    </svg>
+  </div>
+  <div class="vertical-center">
+    <div id='inputArea' class="container-fluid well">
+      <div style="text-align:center;">
+        <progress id='countDownWaiting' value="0" max="100"></progress>
+      </div>
+      <input autofocus id='input' type='text' oninput="converse()" onkeydown="userWantsAnswerNow(event)" size='30' placeholder="Start by typing/saying 'carecue'" title="For example: 'carecue what time is it'."/>
+    </div>
+    <span id='programming-area' contenteditable="true" oninput="userEditedCode()"></span>
+    <p id='messageLog' class="container-fluid well"></p>
+   
+  </div>
+  
+</body>
+</html>

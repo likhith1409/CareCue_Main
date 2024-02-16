@@ -1,0 +1,14 @@
+modes:
+  menu:
+    welcome_message: "Welcome! Please select a chat mode:"
+    options:
+      1: "Normal Chart"
+      2: "Symptom Chart"
+    prompt: "Enter the number of your choice:"
+  normal:
+    welcome_message: "Welcome to Normal Chat! Feel free to ask anything."
+    prompt: "You are in Normal Chat mode. Type 'exit' to switch to Symptom Chart or ask any question."
+  symptom:
+    welcome_message: "Welcome to Symptom Chart! Please enter the symptom you are experiencing."
+    prompt: "You are in Symptom Chart mode. Type 'exit' to switch to Normal Chart or enter a symptom."
+
