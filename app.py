@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = 'carecue2023'
 
 # Replace 'YOUR_API_KEY' with your actual News API key
-# NEWS_API_KEY = 'b5034f4679a54b5bb1f7a2434d802186'
+
 NEWS_API_KEY = 'Your_API'
 
 NEWS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines'
