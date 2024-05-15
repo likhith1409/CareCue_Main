@@ -1,4 +1,3 @@
-
 /*=============== SHOW MENU ===============*/
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
@@ -101,47 +100,6 @@ themeButton.addEventListener('click', () => {
 })
 
 
-// Sample algorithm names (replace with your own)
-const algorithmNames = ["Algorithm 1", "Algorithm 2", "Algorithm 3", "Algorithm 4"];
-
-// Get DOM elements
-const searchBar = document.getElementById("search-bar");
-const suggestions = document.getElementById("suggestions");
-const searchButton = document.getElementById("search-button");
-
-// Event listener for typing in the search bar
-searchBar.addEventListener("input", () => {
-    const input = searchBar.value.toLowerCase();
-    const matchingAlgorithms = algorithmNames.filter((name) => name.toLowerCase().includes(input));
-
-    // Display matching suggestions
-    suggestions.innerHTML = "";
-    matchingAlgorithms.forEach((algorithm) => {
-        const suggestion = document.createElement("li");
-        suggestion.textContent = algorithm;
-        suggestion.addEventListener("click", () => {
-            searchBar.value = algorithm;
-            suggestions.style.display = "none";
-        });
-        suggestions.appendChild(suggestion);
-    });
-
-    suggestions.style.display = matchingAlgorithms.length ? "block" : "none";
-});
-
-// Event listener for clicking the search button
-searchButton.addEventListener("click", () => {
-    const query = searchBar.value;
-    // Redirect or perform the search based on the query
-    // Replace this with your own logic
-});
-
-
-function toggleDetails(id) {
-    var content = document.getElementById(id);
-    content.classList.toggle('collapsible-active');
-}
- 
 
 
 
@@ -163,31 +121,6 @@ for (i = 0; i < dropdowns.length; i++) {
 
 //chatbot
 
-function sendMessage() {
-    var userInput = document.getElementById('userInput');
-    var chatbox = document.getElementById('chatbox');
-
-    // Get user input
-    var userMessage = userInput.value;
-
-    // Display user message in the chatbox
-    chatbox.innerHTML += '<div class="user-message">' + userMessage + '</div>';
-
-    // You can send the user message to the backend (Java or Python) here for processing
-    // Example: sendToBackend(userMessage);
-
-    // Clear the input field
-    userInput.value = '';
-
-    // Simulate a bot response (replace this with actual backend integration)
-    var botMessage = 'Bot: This is a bot response.';
-
-    // Display bot response in the chatbox
-    chatbox.innerHTML += '<div class="bot-message">' + botMessage + '</div>';
-
-    // Scroll the chatbox to the bottom to show the latest messages
-    chatbox.scrollTop = chatbox.scrollHeight;
-}
 
 // voice assistent
 
@@ -220,61 +153,8 @@ function expandContent() {
     }
 }
 
-let newsIndex = 0;
-let healthNews = [];
-
-// Fetch the health news from the Flask server
-fetch('/get_health_news')
-    .then(response => response.json())
-    .then(data => {
-        healthNews = data;
-        updateNews();
-    });
-
-// Update the news headline, source, and link
-function updateNews() {
-    if (healthNews.length > 0) {
-        document.getElementById('headline').textContent = healthNews[newsIndex].headline;
-        document.getElementById('source').textContent = healthNews[newsIndex].source;
-        document.getElementById('link').href = healthNews[newsIndex].link;
-        document.getElementById('expandedContent').style.display = 'block';
-    } else {
-        document.getElementById('headline').textContent = 'No health news available.';
-    }
-}
-
-// Handle the "Next" button click
-document.querySelector('.expand-content button').addEventListener('click', () => {
-    newsIndex = (newsIndex + 1) % healthNews.length;
-    updateNews();
-});
 
 
-// for the voice welcome for the website
-
-window.onload = function () {
-    // Check if the welcome message has already been spoken
-    var hasWelcomeBeenSpoken = sessionStorage.getItem('welcome_spoken');
-
-    if (!hasWelcomeBeenSpoken) {
-        // Function to trigger the welcome message
-        function welcomeMessage() {
-            // Use the same greeting as in the Python Flask code
-            var greeting = "Welcome to CareCue - Your Ultimate Health Companion. Have a great time!";
-            
-            // Use the SpeechSynthesis API to speak the greeting
-            var synth = window.speechSynthesis;
-            var utterance = new SpeechSynthesisUtterance(greeting);
-            synth.speak(utterance);
-
-            // Set a flag in sessionStorage to indicate that the welcome message has been spoken
-            sessionStorage.setItem('welcome_spoken', true);
-        }
-
-        // Call the function to trigger the welcome message
-        welcomeMessage();
-    }
-};
 
 function displayMessage(role, message) {
     const chatbox = document.getElementById('chatbox');

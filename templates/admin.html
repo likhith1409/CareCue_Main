@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carecue Admin Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="static\images\favicon-16x16.png"> <!-- Replace 'path/to/favicon.png' with the actual path to your favicon -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="static\images\logo2.png" alt="Carecue Logo"> <!-- Replace 'path/to/logo.png' with the actual path to your logo -->
+            </div>
+            <h1 class="center">Carecue Admin Center</h1>
+        </header>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by name or email...">
+            <button onclick="searchUser()"><i class="fas fa-search"></i></button>
+            <button id="theme-toggle-btn" onclick="toggleTheme()"><i class="fas fa-adjust"></i></button>
+        </div>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr id="user-{{ user[0] }}"> <!-- Add unique ID for each user -->
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[2] }}</td>
+                    <td><button class="delete-btn" onclick="deleteUser('{{ user[0] }}')">Delete</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function searchUser() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementsByClassName("user-table")[0];
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < td.length; j++) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        break;
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        function toggleTheme() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

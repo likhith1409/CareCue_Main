@@ -1,0 +1,15 @@
+Flask
+requests
+json
+sqlite3
+hashlib
+openai
+re
+pandas
+scikit-learn
+numpy
+csv
+warnings
+pickle
+opencv-python
+joblib

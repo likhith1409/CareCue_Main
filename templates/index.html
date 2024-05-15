@@ -32,7 +32,13 @@
             </div>  
               
             <nav class="nav container">
-                <a href="#" class="nav__logo">CareCue</a>
+                <a href="#" class="nav__logo">CareCue
+                  <svg class="sparkle1" viewBox="0 0 24 24"" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z" fill="black" stroke="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z" fill="black" stroke="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z" fill="black" stroke="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
@@ -57,21 +63,20 @@
 
                         <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
                         <!-- Inside the <nav> element -->
-                        <button id="loginSignupButton" class="nav__button1" onclick="toggleLoginSignup()">Login / Signup</button>
-                        <div id="userDropdown" class="nav__user-dropdown">
-                          <div class="nav__user-container">
+                          <button id="loginSignupButton" class="nav__button1" onclick="toggleLoginSignup()">Login / Signup</button>
+                          <div id="userDropdown" class="nav__user-dropdown">
+                            <div class="nav__user-container">
                               {% if 'user' in session %}
-                                  <label id="userLabel" class="nav__user-label" style="display: none;">{{ session['user']['name'] }}</label>
+                              <label id="userLabel" class="nav__user-label" style="display: none;">{{ session['user']['name'] }}</label>
                               {% else %}
-                                  <label id="userLabel" class="nav__user-label" style="display: none;"></label>
+                              <label id="userLabel" class="nav__user-label" style="display: none;"></label>
                               {% endif %}
-                      
+                              
                               <div class="nav__user-options" style="display: none;">
-                                  <button onclick="logout()">Logout</button>
+                                <button onclick="logout()">Logout</button>
                               </div>
+                            </div>
                           </div>
-                        </div>
-                      
                       
                       
                       
@@ -179,6 +184,69 @@
                         
                     </div>
                 </div>
+                <script>
+                  let healthNews = [];
+                  let currentIndex = 0;
+                  let isUpdating = false;
+              
+                  // Function to fetch and update health news
+                  function fetchAndUpdateNews() {
+                      isUpdating = true;
+                      fetch('/get_health_news')
+                          .then(response => {
+                              if (!response.ok) {
+                                  throw new Error('Failed to fetch health news.');
+                              }
+                              return response.json();
+                          })
+                          .then(data => {
+                              healthNews = data;
+                              updateNews();
+                              isUpdating = false;
+                          })
+                          .catch(error => {
+                              console.error('Error fetching health news:', error);
+                              document.getElementById('headline').textContent = 'Error fetching health news.';
+                              document.getElementById('expandedContent').style.display = 'none';
+                              isUpdating = false;
+                          });
+                  }
+              
+                  // Function to update the news headline, source, and link
+                  function updateNews() {
+                      if (healthNews.length > 0) {
+                          const news = healthNews[currentIndex];
+                          document.getElementById('headline').textContent = news.headline;
+                          document.getElementById('description').textContent = news.description;
+                          document.getElementById('source').textContent = news.source;
+                          document.getElementById('link').href = news.link; // Update the href attribute of the link
+                          document.getElementById('link').textContent = news.link; // Update the text content of the link
+                          document.getElementById('expandedContent').style.display = 'none';
+                          // Move to the next news after 5 seconds
+                          setTimeout(moveToNextNews, 30000);
+                      } else {
+                          document.getElementById('headline').textContent = 'No health news available.';
+                          document.getElementById('expandedContent').style.display = 'none';
+                      }
+                  }
+              
+                  // Function to move to the next news article
+                  function moveToNextNews() {
+                      currentIndex = (currentIndex + 1) % healthNews.length;
+                      updateNews();
+                  }
+              
+                  // Function to toggle the expanded content
+                  function toggleContent() {
+                      if (!isUpdating) {
+                          const expandedContent = document.getElementById('expandedContent');
+                          expandedContent.style.display = (expandedContent.style.display === 'none' || expandedContent.style.display === '') ? 'block' : 'none';
+                      }
+                  }
+              
+                  // Fetch and update news initially
+                  fetchAndUpdateNews();
+                </script>
             
         
                        
@@ -186,10 +254,18 @@
                     <img src="static/images/logo2.png" alt="">
 
                     <div class="home__data">
-                        <h1 class="home__title">CareCue</h1>
+                        <h1 class="home__title">CareCue
+                        <svg class="sparkle" viewBox="0 0 24 24"" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z" fill="black" stroke="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z" fill="black" stroke="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z" fill="black" stroke="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></h1>
                         <p class="home__description">Guiding Your Health Journey with Precision and Compassion: CareCue, Where Wellness Finds a Path</p>
-
-                        <a href="#services" class="button">Get Started!</a>
+                        
+                        <h6 class="home__title1">Try Now!</h6>
+                        <a href="#chatbot" class="button1">CareCue Chatbot</a>
+                        <a href="#scanner" class="button2">MediScan</a>
+                        <a href="#services" class="button3">Get Started!</a>
 
                     </div>   
                 </div>
@@ -205,6 +281,9 @@
 
 At CareCue, we believe in empowering individuals on their journey towards optimal well-being. Our mission is to provide a seamless and personalized healthcare experience that goes beyond conventional boundaries.
                     </p>
+                    <a href="#services" class="button4"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30" style="vertical-align: middle;"">
+                      <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+                  </svg>Github</a>
                 </div>
                 <div class="card">
                   <p class="card-title">Did You Know...</p>
@@ -229,7 +308,7 @@ At CareCue, we believe in empowering individuals on their journey towards optima
             </section>
 
             <!--=============== APP ===============-->
-            <section class="team section container" id="Team">
+            <section class="about section container" id="Team">
               
               <div class="about__container grid">
                 
@@ -241,43 +320,189 @@ At CareCue, we believe in empowering individuals on their journey towards optima
                 </div>
 
                 <div class="inputmed">
-                    <form class="inputmed-form" onsubmit="return false;">
-                        <label for="medicineName">Medicine Name:</label>
-                        <input type="text" id="medicineName" name="medicineName" placeholder="Enter medicine name" value="Paracetamol">
-                        <button type="button" onclick="getMedicineDetails()">Get Details</button>
-                    </form>
-                    <div id="medicineDetails">
-                        <h3>Medicine Details:</h3>
-                        <p><strong>Uses:</strong> <span id="uses"></span></p>
-                        <p><strong>Side Effects:</strong> <span id="sideEffects"></span></p>
-                    </div>
-                </div>
-            
-                <div class="wrapper">
-                  <section class="team section container" id="Team">
-                    <div class="about__container grid">
-                      
-                
-                      <div class="file-upload-container">
-                        <form class="file-upload-form">
-                          <label for="file" class="file-upload-label">
-                            <div class="file-upload-design">
-                              <svg viewBox="0 0 640 512" height="1em">
-                                <path
-                                  d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
-                                ></path>
-                              </svg>
-                              <p>Drag and Drop</p>
-                              <p>or</p>
-                              <span class="browse-button">Browse file</span>
-                            </div>
-                            <input id="file" type="file" />
-                          </label>
-                        </form>
+                  <form class="inputmed-form" onsubmit="return false;">
+                      <label for="medicineName">Medicine Name:</label>
+                      <input type="text" id="medicineName" name="medicineName" placeholder="Enter medicine name" oninput="showSuggestions()">
+                      <div class="suggestions-container">
+                        <div class="suggestions" id="suggestionList"></div>
                       </div>
-                    </div>
-                  </section>
+                      <div class="medibutton-container">
+                          <button type="button" onclick="getMedicineDetails()" class="medibuttons">Get Details</button>
+                          <input type="file" id="uploadImageInput" accept="image/*" style="display:none;">
+                          <button type="button" onclick="uploadImage()" class="medibuttons">Upload Image</button>
+
+                      </div>
+                  </form>
+                  <div id="medicineDetails">
+                      <h3>Medicine Details:</h3>
+                      <p><strong>Uses:</strong> <span id="uses"></span></p>
+                      <p><strong>Side Effects:</strong> <span id="sideEffects"></span></p>
+                  </div>
                 </div>
+                <script>
+                  function uploadImage() {
+                      var uploadInput = document.getElementById('uploadImageInput');
+                      uploadInput.click(); 
+
+                      uploadInput.addEventListener('change', function(event) {
+                          var file = event.target.files[0];
+                          if (file) {
+                              
+                              console.log('File selected:', file.name);
+                              
+                              var formData = new FormData();
+                              formData.append('file', file);
+
+                              fetch('/upload_image', {
+                                  method: 'POST',
+                                  body: formData
+                              })
+                              .then(response => response.json())
+                              .then(data => {
+                                  console.log(data);
+                                  
+                                  document.getElementById('medicineName').value = data.name; 
+                                  document.getElementById('uses').textContent = data.uses; 
+                                  document.getElementById('sideEffects').textContent = data.side_effects; 
+                              })
+                              .catch(error => console.error('Error:', error));
+                          }
+                      });
+                  }
+                  function showSuggestions() {
+                      let input = document.getElementById('medicineName').value.toLowerCase();
+                      let suggestions = [
+                          "Paracetamol",
+                          "Dolo 650",
+                          "Panadol",
+                          "Brufen 400mg",
+                          "Brufen 200mg",
+                          "Amoxil",
+                          "Ampiclox",
+                          "Flagyl 400mg",
+                          "Disprin",
+                          "Ceefix",
+                          "Azithromycin",
+                          "Augmentin 375mg",
+                          "Diclofenac sodium",
+                          "Celecoxib",
+                          "Strepsils",
+                          "Multivitamin",
+                          "Meftal Spas",
+                          "Rantac 150mg",
+                          "Cimetidine",
+                          "Famotidine",
+                          "Nucort Forte",
+                          "Flurbiprofen",
+                          "Tranesma",
+                          "Omeprazole",
+                          "Domperidone",
+                          "Amlodipine besilate",
+                          "Propranolol",
+                          "Glucophage",
+                          "Daonil",
+                          "Loratadine",
+                          "Fluteez",
+                          "Avil",
+                          "Tablet3",
+                          "Montelukast",
+                          "Alprazolam",
+                          "Betamethasone",
+                          "Bromazepam",
+                          "Gravinate",
+                          "Monocef-O",
+                          "Taxim",
+                          "App-up syrup",
+                          "Pan-D",
+                          "Domperidone",
+                          "Pantop DSR",
+                          "Pantop D",
+                          "Diclofenac",
+                          "Avil amp",
+                          "Betnovate-C Cream",
+                          "Betnovate-n cream",
+                          "Skin shine Cream",
+                          "Sipderm Plus Cream",
+                          "Gentop 80mg Lotion",
+                          "Gentamycin Injection",
+                          "Brugel",
+                          "Dulcoflex",
+                          "Dynapar",
+                          "Omnocortil",
+                          "Telma 80mg",
+                          "Telismart H 40",
+                          "Glimirep-4",
+                          "Telixia-40H",
+                          "Diziron",
+                          "Dart",
+                          "Pantosec",
+                          "Rabeprazole",
+                          "Ranitin",
+                          "Benadryl Syrup",
+                          "Antiderm XL Ointment",
+                          "Burnol Cream 10gm",
+                          "Coldact Capsule",
+                          "Flucold Syrup",
+                          "Cheston Cold Tablet",
+                          "Eofil Forte",
+                          "Enteroquinol 250mg Tablet",
+                          "Zenflox 200",
+                          "Suganril",
+                          "Cefix-O Tablet",
+                          "Albendazole",
+                          "Candid-B Cream",
+                          "Formosone 250 CFC Free Inhaler",
+                          "Nicip Tablet",
+                          "Brufen 400 Tablet",
+                          "Floxip 500 Tablet",
+                          "Fenak Plus Tablet",
+                          "Rantac Syrup",
+                          "Omee syrup",
+                          "Omee tablet",
+                          "Flublast Nasal Solution",
+                          "Ceflox-D Eye/Ear Drops",
+                          "Happi-D",
+                          "Mahacef-cv",
+                          "Sumo gel ointment",
+                          "Omnigel",
+                          "Saridon tablet"
+                      ]; // Replace with your actual list of medicine names
+                      let suggestionList = document.getElementById('suggestionList');
+                      suggestionList.innerHTML = '';
+
+                      if (input.length === 0) {
+                            suggestionList.style.display = 'none';
+                            return;
+                      }
+
+                      let matchingSuggestions = suggestions.filter(function(medicine) {
+                            return medicine.toLowerCase().startsWith(input);
+                      });
+
+                      if (matchingSuggestions.length === 0) {
+                            suggestionList.style.display = 'none';
+                            return;
+                      }
+
+                      suggestionList.innerHTML = '';
+                      suggestionList.style.display = 'block';
+
+                      matchingSuggestions.forEach(function(medicine) {
+                            let suggestion = document.createElement('div');
+                            suggestion.classList.add('suggestion');
+                            suggestion.textContent = medicine;
+                            suggestion.addEventListener('click', function() {
+                                document.getElementById('medicineName').value = medicine;
+                                suggestionList.style.display = 'none';
+                            });
+                            suggestionList.appendChild(suggestion);
+                      });
+                    }
+                </script>
+              
+              
+              
+              
                             
               
               
@@ -291,10 +516,10 @@ At CareCue, we believe in empowering individuals on their journey towards optima
             
             </section>
             <!--===============chatbot====================-->
-            <section class="services section container" id="chatbot">
+            <section class="about section container" id="chatbot">
                <div class="services__container grid">
                   <!-- chatbox.html -->
-                  <div class="chatbot_container">
+                <div class="chatbot_container">
                     <div class="chat-header">
                         <h2>CareCue Bot</h2>
                         <!-- Add buttons here -->
@@ -306,31 +531,95 @@ At CareCue, we believe in empowering individuals on their journey towards optima
                               <img src="static/images/OpenAi.png" alt="Logo" class="chat_button-logo">
                           </button>
                         </div>
+                        <div class="chatbotlabel">
+                          <span>Note: if any severe issue, contact with a doctor</span>
+                        </div>
                     </div>
-                    <script>
-                      window.onload = function() {
-                          document.getElementById('normalChart').addEventListener('click', function() {
-                              document.getElementById('chatbox').innerHTML = '<p>You are in Normal Chat mode.</p>';
-                          });
-                      
-                          document.getElementById('symptomChart').addEventListener('click', function() {
-                              document.getElementById('chatbox').innerHTML = '<p>You are in Symptom Chat mode.</p>';
-                          });
-                      
-                          document.getElementById('logoChart').addEventListener('click', function() {
-                              document.getElementById('chatbox').innerHTML = '<p>You are in Logo Chat mode.</p>';
-                          });
-                      }
-                    </script>
                     <div class="chatbox" id="chatbox">
                       <!-- Chat messages will be displayed here -->
                       <div class="message-container bot-container">
                         <div class="message bot-message">Hello! I'm CareCue Bot. How can I assist you today?</div>
                       </div>
                       <div class="message-container user-container">
-                        <div class="message user-message">Hi</div>
+                        <div class="message user-message"></div>
                       </div>
                     </div>
+                    <script>
+                      window.onload = function() {
+                          document.getElementById('normalChart').addEventListener('click', function() {
+                              clearChatbox(); // Clear chatbox when mode is changed
+                              document.getElementById('chatbox').innerHTML = '<div class="message-container bot-container"><div class="message bot-message">You are in Normal Chat mode.</div></div>';
+                              setMode('normal');
+                          });
+
+                          document.getElementById('symptomChart').addEventListener('click', function() {
+                              clearChatbox(); // Clear chatbox when mode is changed
+                              document.getElementById('chatbox').innerHTML = '<div class="message-container bot-container"><div class="message bot-message">You are in Symptom Chat mode.</div></div>';
+                              setMode('symptom');
+                          });
+
+                          document.getElementById('logoChart').addEventListener('click', function() {
+                              clearChatbox(); // Clear chatbox when mode is changed
+                              document.getElementById('chatbox').innerHTML = '<div class="message-container bot-container"><div class="message bot-message">You are in OpenAi Chat mode.</div></div>';
+                              setMode('logo');
+                          });
+
+                          // Add event listener to input field for Enter key press
+                          document.getElementById('userInput').addEventListener('keypress', function(event) {
+                              if (event.key === 'Enter') {
+                                  sendMessage();
+                              }
+                          });
+                      }
+
+                      function clearChatbox() {
+                          document.getElementById('chatbox').innerHTML = '';
+                      }
+
+                      function setMode(mode) {
+                          clearChatbox(); // Clear chatbox when mode is changed
+
+                          fetch('/set_mode', {
+                              method: 'POST',
+                              headers: {
+                                  'Content-Type': 'application/json',
+                              },
+                              body: JSON.stringify({ mode: mode }),
+                          });
+
+                          if (mode === 'normal') {
+                              document.getElementById('chatbox').innerHTML = '<div class="message-container bot-container"><div class="message bot-message">You are in Normal Chat mode.</div></div>';
+                          } else if (mode === 'symptom') {
+                              document.getElementById('chatbox').innerHTML = '<div class="message-container bot-container"><div class="message bot-message">You are in Symptom Chat mode.</div></div>';
+                              sendMessage(); // Call sendMessage directly for Symptom mode
+                          } else if (mode === 'logo') {
+                              document.getElementById('chatbox').innerHTML = '<div class="message-container bot-container"><div class="message bot-message">You are in OpenAi Chat mode.</div></div>';
+                          }
+                      }
+
+                      function sendMessage() {
+                          var userInput = document.getElementById('userInput').value;
+                          var xhr = new XMLHttpRequest();
+                          xhr.open("POST", "/send_message", true);
+                          xhr.setRequestHeader("Content-Type", "application/json");
+                          xhr.onreadystatechange = function() {
+                              if (xhr.readyState === XMLHttpRequest.DONE) {
+                                  if (xhr.status === 200) {
+                                      var response = JSON.parse(xhr.responseText);
+                                      // Append user input to the chatbox
+                                      document.getElementById('chatbox').innerHTML += '<div class="message-container user-container"><div class="message user-message">' + userInput + '</div></div>';
+                                      // Append bot's response to the chatbox only if there is no existing content
+                                      if (document.getElementById('chatbox').innerHTML.trim() === '') {
+                                          document.getElementById('chatbox').innerHTML += '<div class="message-container bot-container"><div class="message bot-message">' + response.bot + '</div></div>';
+                                      }
+                                  } else {
+                                      console.log('Error:', xhr.status);
+                                  }
+                              }
+                          };
+                          xhr.send(JSON.stringify({ userInput: userInput }));
+                      }
+                    </script>
 
                   
                     <div class="input-box">
@@ -345,24 +634,133 @@ At CareCue, we believe in empowering individuals on their journey towards optima
                 
 
                 
-               </div>
-               <div class="services__container grid">
-                  <div class="custom-card">
-                    <div class="custom-content">
-                      <div class="custom-title">CareCue Voice Assistent</div>
-                      
-                      <div class="custom-description">Click the link below to start a conversation with our intelligent healthcare voice assistant. Whether you have health-related questions, need assistance with medication information, or simply want to stay updated on the latest health tips, our voice assistant is here to help. Experience a hands-free and personalized approach to healthcare interaction. Your well-being is just a click away.</div>
-                    </div>
-                    <button class="custom-button" onclick="openHtmlPage('voice.html')">
-                      Click Here
-                    </button>
-
-                  </div>
-               </div>
+              </div>
+              <div class="voiceass-container">
+                <div class="voiceass-header">CareCue</div>
+                <div class="voiceass-history" id="voiceass-chat-history">
+                  <div class="voiceass-message user-message">Hi</div>
+                  <div class="voiceass-message bot-message">Hello! Welcome to CareCue</div>
+                </div>
+                <div class="voiceass-input-container">
+                  <button class="voiceass-custom-button" onclick="toggleVoiceAssistant()">
+                    <!-- Microphone icon SVG -->
+                    <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        width="50px" height="50px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                      <g>
+                        <path fill="#F9EBB2" d="M37,53.346c-0.654,0.168-1.321,0.304-2,0.407v1.246v0.793V60c0,1.104-0.896,2-2,2h-2c-1.104,0-2-0.896-2-2
+                          v-4.208v-0.793v-1.246c-0.679-0.104-1.346-0.239-2-0.407c-8.621-2.224-15-10.029-15-19.345c0-0.553,0.447-1,1-1s1,0.447,1,1
+                          C14.001,43.941,22.059,52,32,52s17.999-8.059,18-17.999c0.001-0.551,0.447-0.998,1-0.998s0.999,0.447,1,0.998
+                          C52,43.316,45.621,51.122,37,53.346z"/>
+                        <path fill="#45AAB8" d="M20,31.001h5c0.553,0,1-0.447,1-1s-0.447-1-1-1h-5v-4h5c0.553,0,1-0.447,1-1s-0.447-1-1-1h-5v-4h5
+                          c0.553,0,1-0.447,1-1s-0.447-1-1-1h-5v-3c0-6.627,5.373-12,12-12s12,5.373,12,12v3h-5c-0.553,0-1,0.447-1,1s0.447,1,1,1h5v4h-5
+                          c-0.553,0-1,0.447-1,1s0.447,1,1,1h5v4h-5c-0.553,0-1,0.447-1,1s0.447,1,1,1h5v3c0,6.627-5.373,12-12,12s-12-5.373-12-12V31.001z"
+                          />
+                        <g>
+                          <path fill="#394240" d="M32,48.001c7.732,0,14-6.268,14-14v-20c0-7.732-6.268-14-14-14s-14,6.268-14,14v20
+                            C18,41.733,24.268,48.001,32,48.001z M20,31.001h5c0.553,0,1-0.447,1-1s-0.447-1-1-1h-5v-4h5c0.553,0,1-0.447,1-1s-0.447-1-1-1h-5
+                            v-4h5c0.553,0,1-0.447,1-1s-0.447-1-1-1h-5v-3c0-6.627,5.373-12,12-12s12,5.373,12,12v3h-5c-0.553,0-1,0.447-1,1s0.447,1,1,1h5v4
+                            h-5c-0.553,0-1,0.447-1,1s0.447,1,1,1h5v4h-5c-0.553,0-1,0.447-1,1s0.447,1,1,1h5v3c0,6.627-5.373,12-12,12s-12-5.373-12-12
+                            V31.001z"/>
+                          <path fill="#394240" d="M51,31.003c-1.657,0-2.999,1.342-3,2.998C47.999,42.839,40.837,50,32,50s-15.999-7.161-16-15.999
+                            c0-1.656-1.343-3-3-3s-3,1.344-3,3c0,10.43,7.26,19.157,17,21.423V60c0,2.209,1.791,4,4,4h2c2.209,0,4-1.791,4-4v-4.576
+                            c9.74-2.266,17-10.993,17-21.423C53.999,32.345,52.657,31.003,51,31.003z M37,53.346c-0.654,0.168-1.321,0.304-2,0.407V60
+                            c0,1.104-0.896,2-2,2h-2c-1.104,0-2-0.896-2-2v-6.247c-0.679-0.104-1.346-0.239-2-0.407c-8.621-2.224-15-10.029-15-19.345
+                            c0-0.553,0.447-1,1-1s1,0.447,1,1C14.001,43.941,22.059,52,32,52s17.999-8.059,18-17.999c0.001-0.551,0.447-0.998,1-0.998
+                            s0.999,0.447,1,0.998C52,43.316,45.621,51.122,37,53.346z"/>
+                        </g>
+                      </g>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <script>
+                const chatHistory = document.getElementById('voiceass-chat-history');
+                let recognition;
+                let isListening = false;
+            
+                function startListening() {
+                    recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+                    recognition.lang = 'en-US';
+                    recognition.interimResults = false;
+                    recognition.maxAlternatives = 1;
+            
+                    recognition.onresult = function(event) {
+                        const transcript = event.results[0][0].transcript;
+                        displayVoiceMessage(transcript, 'user');
+                        
+                        // Send the user's spoken input to the Flask backend for processing
+                        fetch('/process_voice_input', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({user_message: transcript})
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            // Display the bot's response
+                            displayVoiceMessage(data.bot_response, 'bot');
+                        })
+                        .catch(error => console.error('Error:', error));
+                    }
+            
+                    recognition.onerror = function(event) {
+                        console.error('Speech recognition error:', event.error);
+                    }
+            
+                    recognition.start();
+                    isListening = true;
+                }
+            
+                function stopListening() {
+                    if (recognition) {
+                        recognition.stop();
+                        isListening = false;
+                    }
+                }
+            
+                function toggleVoiceAssistant() {
+                    const voiceButton = document.querySelector('.voiceass-custom-button');
+                    const imageWidth = '50px'; // You can change these values as needed
+                    const imageHeight = '50px'; // You can change these values as needed
+            
+                    if (!isListening) {
+                        voiceButton.innerHTML = `<img class="voice-icon" src="static/images/mic.png" alt="Start Voice Assistant">`;
+                        voiceButton.querySelector('.voice-icon').style.width = imageWidth;
+                        voiceButton.querySelector('.voice-icon').style.height = imageHeight;
+                        startListening();
+                    } else {
+                        voiceButton.innerHTML = `<img class="voice-icon" src="static/images/microphone.png" alt="Stop Voice Assistant">`;
+                        voiceButton.querySelector('.voice-icon').style.width = imageWidth;
+                        voiceButton.querySelector('.voice-icon').style.height = imageHeight;
+                        stopListening();
+                    }
+                }
+            
+                function displayVoiceMessage(message, sender) {
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('voiceass-message', 'voiceass-' + sender + '-message');
+                    messageElement.innerText = message;
+                    
+                    // Determine the correct container based on the sender
+                    const container = sender === 'user' ? 'user-message' : 'bot-message';
+                    messageElement.classList.add(container);
+                    
+                    chatHistory.appendChild(messageElement);
+                    chatHistory.scrollTop = chatHistory.scrollHeight;
+                }
+            </script>
               
               <!--==============Voice assistent===============================-->
                
 
+            </section>
+
+
+            <section class="services section container" id="maps">
+                <div class="services__container grid">
+                    
+                </div>
             </section>
 
             <!--=============== CONTACT US ===============-->
@@ -379,7 +777,7 @@ At CareCue, we believe in empowering individuals on their journey towards optima
                     </ul>
 
                     <div class="contact__content">
-                        <a href="https://github.com/" class="button">Contact Us</a>
+                        <a href="https://github.com/likhith1409" class="button">Contact Us</a>
                     </div>
                 </div>
             </section>
@@ -398,10 +796,10 @@ At CareCue, we believe in empowering individuals on their journey towards optima
                 <div class="footer__content">
                     <h3 class="footer__title">Our Services</h3>
                     <ul class="footer__links">
-                        <li><a href="https://github.com/" class="footer__link">Support </a></li>
-                        <li><a href="#" class="footer__link">Machine Learning</a></li>
-                        <li><a href="#" class="footer__link">Deep Learning</a></li>
-                        <li><a href="#" class="footer__link">Artificial Intelligence</a></li>
+                        <li><a href="https://github.com/" class="footer__link">CareCue Chatbot</a></li>
+                        <li><a href="#" class="footer__link">CareCue Voice Assistent</a></li>
+                        <li><a href="#" class="footer__link">Medicine Scan</a></li>
+                        <li><a href="#" class="footer__link">News</a></li>
                     </ul>
                 </div>
 
@@ -411,18 +809,18 @@ At CareCue, we believe in empowering individuals on their journey towards optima
                     <ul class="footer__links">
                         <li><a href="#" class="footer__link">Support</a></li>
                         <li><a href="https://github.com/" class="footer__link">Questions</a></li>
-                        <li><a href="#" class="footer__link">Discord</a></li>
+        
                     </ul>
                 </div>
 
                 <div class="footer__social">
-                    <a href="#" class="footer__social-link"><i class='bx bxl-facebook-circle '></i></a>
+                    
                     <a href="https://github.com/" class="footer__social-link"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.instagram.com/" class="footer__social-link"><i class='bx bxl-instagram-alt'></i></a>
+                    
                 </div>
             </div>
 
-            <p class="footer__copy">&#169; CareCue. All right reserved</p>
+            <p class="footer__copy">&#169;2024 CareCue. All right reserved</p>
         </footer>
 
         <!--=============== SCROLL UP ===============-->

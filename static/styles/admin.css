@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eceff4;
+    color: #2e3440;
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: #5e81ac;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #81a1c1;
+}
+
+#theme-toggle-btn {
+    margin-left: 10px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+    border-bottom: 1px solid #434c5e;
+}
+
+.user-table th {
+    background-color: #4c566a;
+    text-align: left;
+    color: #eceff4;
+}
+
+
+
+.user-table tbody tr:hover {
+    background-color: #5e81ac;
+}
+
+.delete-btn {
+    padding: 5px 10px;
+    background-color: #bf616a;
+    color: #eceff4;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #d08770;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 290px; /* Adjust as needed */
+    height: 250px;
+}
+
+.dark-mode {
+    background-color: #2e3440;
+    color: #eceff4;
+}
+
+.dark-mode .search-bar input[type="text"] {
+    background-color: #4c566a;
+    color: #eceff4;
+}
+
+.dark-mode .user-table th {
+    background-color: #4c566a;
+}

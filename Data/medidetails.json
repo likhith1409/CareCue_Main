@@ -1,56 +1,56 @@
 [
     {
-      "name": "paracetamol",
+      "name": ["paracetamol", "Paracetamol"],
       "uses": ["Headache","Tension headache","Backache","Fever (pyrexia)"],
       "side_effects": ["Skin rashes", " itching","Shortness of breath","Swelling of the throat"]
     },
     {
-      "name": "dolo 650",
+      "name": ["Dolo 650", "dolo", "Dolo"],
       "uses": ["Pain relief","Treatment of Fever"],
       "side_effects": ["Stomach pain","Nausea","Vomiting"]
     },
     {
-        "name": "panadol",
+        "name": ["panadol", "Panadol"],
         "uses": ["pain relief", "Treatment of Fever"],
         "side_effects": ["Skin rash", "itching", "blisters"]
     },
     {
-      "name": "brufen 400mg",
+      "name": ["brufen 400mg", "Brufen", "Brufen 400mg"],
       "uses": ["Pain", "inflammation"],
       "side_effects": ["Stomach pain","diarrhea","gas"]
     },
     {
-      "name": "Brufen 200mg",
+      "name": ["Brufen 200mg", "Brufen"],
       "uses": ["Pain", "inflammation"],
       "side_effects": ["Stomach pain","diarrhea","gas"]
     },
     {
-      "name": "amoxil",
+      "name": ["amoxil", "Amoxil"],
       "uses": ["Bacterial infections"],
       "side_effects": ["Diarrhoea","nausea","vomiting","rashes"]
     },
     {
-      "name": "ampiclox",
+      "name": ["ampiclox", "Ampiclox"],
       "uses": ["Bacterial infections"],
       "side_effects": ["Allergic reaction","Rash","Stomach pain","Nausea","Diarrhea"]
     },
     {
-      "name": "flagyl 400mg",
+      "name": ["flagyl 400mg", "flagyl", "Flagyl 400mg"],
       "uses": ["Treatment of Bacterial infections","Treatment of Parasitic infections"],
       "side_effects": ["Headache","Dryness in mouth","Nausea","Metallic taste"]
     },
     {
-      "name": "disprin",
+      "name": ["disprin", "Disprin"],
       "uses": ["Headache","pain","fever"],
       "side_effects": ["Nausea", "rash"]
     },
     {
-      "name": "ceefix",
+      "name": ["ceefix", "Ceefix"],
       "uses": ["Bacterial infections"],
       "side_effects": ["Diarrhoea","nausea","vomiting","stomach pain"]
     },
     {
-      "name": "azithromycin",
+      "name": ["azithromycin", "Azithromycin"],
       "uses": ["Bacterial infections"],
       "side_effects": ["Dizziness","breathing difficulty","headache","irregular heart beat"]
     },
@@ -60,22 +60,22 @@
       "side_effects": ["Nausea","vomiting","diarrhoea","headache"]
     },
     {
-      "name": "diclofenac sodium",
+      "name": ["diclofenac sodium", "Diclofenac sodium"],
       "uses": ["to treat aches and pains","as well as problems with joints,muscles and bones"],
       "side_effects": ["heart disease","high blood pressure","ulcers or bleeding in your stomach","asthma","liver or kidney disease"]
     },
     {
-      "name": "celecoxib",
+      "name": ["celecoxib", "Celecoxib"],
       "uses": ["Treatment of Rheumatoid arthritis","Treatment of Osteoarthritis"],
       "side_effects": ["stomach pain","heartburn","gas","diarrhea","constipation","vomiting"]
     },
     {
-      "name": "strepsils",
+      "name": ["strepsils", "Strepsils"],
       "uses": ["For the symptomatic relief of mouth and throat infections","dry,irritating cough associated with the common cold and nasal congestion", "Use"],
       "side_effects": ["Strepsils Lozenges for Adults and Children Over Six can cause side effects, although not everybody gets them. Side effects may include rash, stomach pain, feeling sick, oral discomfort, allergic reaction."]
     },
     {
-      "name": "multivitamin",
+      "name": ["multivitamin", "Multivitamin"],
       "uses": ["to treat or prevent vitamin deficiency due to poor diet, certain illnesses, or during pregnancy. "],
       "side_effects": ["tooth staining","increased urination","uneven heart rate","confusion", "SideEffect"]
     },
@@ -90,12 +90,12 @@
       "side_effects": ["Headache","itching","rashes or fever"]
     },
     {
-      "name": "cimetidine",
+      "name": ["cimetidine", "Cimetidine"],
       "uses": ["Decreased level of consciousness"],
       "side_effects": ["Diarrhoea","stomach pain","dizziness","headache","rashes"]
     },
     {
-      "name": "famotidine",
+      "name": ["famotidine", "Famotidine"],
       "uses": ["treatment of gastroesophageal reflux disease (acid reflux)","peptic ulcer disease","heartburn"],
       "side_effects": ["Headache","Diarrhea","Drowsiness","Constipation"]
     },
@@ -105,42 +105,42 @@
       "side_effects": ["Irritation","weight gain","infections","bloating"]
     },
     {
-      "name": "flurbiprofen",
+      "name": ["flurbiprofen", "Flurbiprofen"],
       "uses": ["relieve pain","tenderness","swelling","stiffness"],
       "side_effects": ["headache","nervousness or anxiety", "depression","memory problems"]
     },
     {
-      "name": "Tranesma ",
+      "name": "Tranesma",
       "uses": ["Excessive bleeding"],
       "side_effects": ["Diarrhoea","vomiting","nausea"]
     },
     {
-      "name": "omeprazole",
+      "name": ["omeprazole", "Omeprazole"],
       "uses": ["Acidity","heartburn","stomach ulcers"],
       "side_effects": ["Headache","nausea","vomiting"]
     },
     {
-      "name": "domperidone",
+      "name": "Domperidone",
       "uses": ["used in the treatment of indigestion","nausea","vomiting"],
       "side_effects": ["Dryness in mouth"]
     },
     {
-      "name": "amlodipine besilate",
+      "name": "Amlodipine besilate",
       "uses": ["used in the treatment of Hypertension (high blood pressure)","Angina (heart-related chest pain)"],
       "side_effects": ["Headache","Nausea","Abdominal pain","Flushing (sense of warmth in the face, ears, neck and trunk)","Dizziness","Palpitations","Edema (swelling)", "SideEffect"]
     },
     {
-      "name": "propranolol",
+      "name": "Propranolol",
       "uses": ["used in the treatment of Pheochromocytoma","Hypertension (high blood pressure)"],
       "side_effects": ["Slow heart rate","Nightmares","Cold extremities","Fatigue","Sleep disturbance","SideEffect"]
     },
     {
-      "name": "glucophage",
+      "name": "Glucophage",
       "uses": ["used for type 2 diabetes mellitus (‘non-insulin dependent diabetes’) when diet and exercise have not been able to control your blood glucose levels"],
       "side_effects": ["Stomach pain","Altered taste sensations","Loss of appetite","Vitamin B12 deficiency (low level of vitamin B12 in blood","Skin rash","redness","itching","Lactic acidosis (too much acid in the body)","Abnormal liver function tests and hepatitis"]
     },
     {
-      "name": "daonil",
+      "name": "Daonil",
       "uses": ["Type 2 diabetes mellitus"],
       "side_effects": ["Headache","dizziness","nausea","low blood sugar level"]
     },
@@ -150,7 +150,7 @@
       "side_effects": ["Sleepiness","Headache","Increased appetite"]
     },
     {
-      "name": "fluteez",
+      "name": "Fluteez",
       "uses": ["Common cold"],
       "side_effects": ["Dryness in mouth","Upset stomach","Fatigue","Dizziness","Sleepiness","Allergic reaction"]
     },
@@ -170,7 +170,7 @@
       "side_effects": ["Headache","Diarrhea","Abdominal pain","Fever","Upper respiratory tract infection", "SideEffect"]
     },
     {
-      "name": "alprazolam",
+      "name": "Alprazolam",
       "uses": ["used in the treatment of Anxiety and Panic disorder"],
       "side_effects": ["Memory impairment","Sleepiness","Nausea","Constipation","Difficulty in speaking","Impaired coordination"]
     },
@@ -180,12 +180,12 @@
       "side_effects": ["Weight gain","Mood changes","Behavioral changes","Itching","Burning sensation","Bruising","Headache"]
     },
     {
-      "name": "bromazepam",
+      "name": "Bromazepam",
       "uses": ["to treat panic disorders and severe anxiety"],
       "side_effects": ["behaviour changes","confusion","dizziness"]
     },
     {
-      "name": "gravinate",
+      "name": "Gravinate",
       "uses": ["Treatment of Nausea and vomiting in pregnancy"],
       "side_effects": ["Dryness in mouth","Constipation","Lightheadedness","Drowsiness"]
     },
@@ -200,7 +200,7 @@
       "side_effects": ["Nausea","Stomach pain","Indigestion","Diarrhea"]
     },
     {
-      "name": "app-up syrup",
+      "name": "App-up syrup",
       "uses": ["Appetite stimulant"],
       "side_effects": ["Dizziness","diarrhoea","constipation","rashes"]
     },
@@ -215,7 +215,7 @@
       "side_effects": ["Dryness in mouth"]
     },
     {
-      "name": "pantop DSR",
+      "name": "Pantop DSR",
       "uses": ["Acidity, heartburn"],
       "side_effects": ["Diarrhoea","dry mouth","headache","weakness","rashes","nausea"]
     },
@@ -240,7 +240,7 @@
       "side_effects": ["Most side effects do not require any medical attention and disappear as your body adjusts to the medicine. Consult your doctor if they persist or if you’re worried about them"]
     },
     {
-      "name": "betnovate-n cream",
+      "name": "Betnovate-n cream",
       "uses": ["Treatment of Bacterial skin infections"],
       "side_effects": ["Burning sensation","Itching"]
     },
@@ -265,27 +265,27 @@
       "side_effects": ["Most side effects do not require any medical attention and disappear as your body adjusts to the medicine. Consult your doctor if they persist or if you’re worried about them","Hearing loss","Kidney damage","Balance disorder (loss of balance)","Injection site pain"]
     },
     {
-      "name": "brugel",
+      "name": "Brugel",
       "uses": ["Pain relief"],
       "side_effects": ["No common side effects seen"]
     },
     {
-      "name": "dulcoflex",
+      "name": "Dulcoflex",
       "uses": ["Treats constipation","Used for the preparation of diagnostic procedures, in pre-and postoperative treatment, and in conditions that require defecation to be facilitated"],
       "side_effects": ["Dulcoflex tablets may cause abdominal cramps or pain, diarrhea, or nausea in some individuals. Consult your physician if you notice any such side effects while taking these tablets."]
     },
     {
-      "name": "dynapar",
+      "name": "Dynapar",
       "uses": ["Pain relief"],
       "side_effects": ["Dynapar Tablet is a combination of two medicines: Diclofenac and Paracetamol. These medicines work by blocking the action of chemical messengers responsible for pain, fever and inflammation (redness and swelling)"]
     },
     {
-      "name": "omnocortil",
+      "name": "Omnocortil",
       "uses": ["Treatment of Severe allergic reactions","Treatment of Allergic conditions","Treatment of Rheumatic disorder","Treatment of Skin disorders","Treatment of Eye disorders","Treatment of Nephrotic syndrome"],
       "side_effects": ["Reduction in bone density","Upset stomach","Behavioral changes","Mood changes","Weight gain"]
     },
     {
-      "name": "telma 80mg",
+      "name": "Telma 80mg",
       "uses": ["Treats essential hypertension (high blood pressure)","Reduces the risk of cardiovascular events (such as stroke and heart attack)"],
       "side_effects": ["low blood pressure"]
     },
@@ -300,7 +300,7 @@
       "side_effects": ["Rash","Nausea","Diarrhea"]
     },
     {
-      "name": "telixia-40H",
+      "name": "Telixia-40H",
       "uses": ["Treatment of Hypertension (high blood pressure)"],
       "side_effects": ["Fatigue","Dizziness","Nausea","Decreased magnesium level in blood"]
     },
@@ -320,12 +320,12 @@
       "side_effects": ["Flatulence","Headache","Nausea","Stomach pain","Vomiting","Dizziness"]
     },
     {
-      "name": "rabeprazole",
+      "name": "Rabeprazole",
       "uses": ["Treatment of Gastroesophageal reflux disease (Acid reflux)","Treatment of Peptic ulcer disease","Treatment of Zollinger-Ellison syndrome"],
       "side_effects": ["Flatulence","Headache","Nausea","Sore throat","Stomach pain"]
     },
     {
-      "name": "ranitin",
+      "name": "Ranitin",
       "uses": ["GERD and peptic ulcer"],
       "side_effects": ["Pain","redness or swelling at the injection site","headache"]
     },
@@ -425,12 +425,12 @@
       "side_effects": ["Headache","Diarrhea","Gastrointestinal disturbance"]
     },
     {
-      "name": "omee syrup",
+      "name": "Omee syrup",
       "uses": ["Acidity","Stomach ulcers","Bloating"],
       "side_effects": ["Constipation","Diarrhea"]
     },
     {
-      "name": "omee tablet",
+      "name": "Omee tablet",
       "uses": ["Treatment of Heartburn","Treatment of Gastroesophageal reflux disease (Acid reflux)","Treatment of Peptic ulcer disease","Treatment of Zollinger-Ellison syndrome"],
       "side_effects": ["Flatulence","Headache","Nausea","Vomiting","Abdominal pain"]
     },
@@ -450,22 +450,22 @@
       "side_effects": ["Stomach pain","Dryness in mouth","Headache","Dizziness","Flatulence"]
     },
     {
-      "name": "mahacef-cv",
+      "name": "Mahacef-cv",
       "uses": ["Treatment of Bacterial infections"],
       "side_effects": ["Nausea","Diarrhea","Stomach pain","Indigestion","Flatulence"]
     },
     {
-      "name": "sumo gel ointment",
+      "name": "Sumo gel ointment",
       "uses": ["treatment of pain","swelling and inflammation due to muscle","joint and bone-related disorders"],
       "side_effects": ["experience any skin reactions such as rashes, itching and irritation after application of this Gel"]
     },
     {
-      "name": "omnigel",
+      "name": "Omnigel",
       "uses": ["Low back pain","Shoulder pain and stiff neck","Joint pain","Sports injury (sprain and strain)"],
       "side_effects": ["rash","hives","itching","difficulty breathing"]
     },
     {
-      "name": "saridon tablet",
+      "name": "Saridon tablet",
       "uses": ["Treat headaches"],
       "side_effects": ["Nausea","Abdominal pain"]
     }
