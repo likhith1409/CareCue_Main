@@ -371,7 +371,9 @@ def upload_image():
 
 #########################################################################################################################
 # Replace 'YOUR_API_KEY' with your actual News API key
+#NEWS_API_KEY = 'b5034f4679a54b5bb1f7a2434d802186'
 NEWS_API_KEY = 'Your_Api_key'
+#openai.api_key = 'sk-proj-LIW2yxyphP4zejzkxo3pT3BlbkFJJlD0Yb82ZrLxqsGSQZPY'
 openai.api_key = 'Your_Api'
 
 

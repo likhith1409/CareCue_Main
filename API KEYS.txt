@@ -1,2 +1,3 @@
 OpenAiApi= Open Ai api key
+sk-proj-LIW2yxyphP4zejzkxo3pT3BlbkFJJlD0Yb82ZrLxqsGSQZPY
 newsapi = News Api key

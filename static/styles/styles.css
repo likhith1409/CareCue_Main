@@ -1090,6 +1090,20 @@ body.dark-theme {
   border-radius: 10px;
 }
 
+@media only screen and (max-width: 600px) {
+  .chatbotlabel span {
+    display: inline-block; /* Ensure element stays inline */
+    background-color: #fff; /* Keep the same background color */
+    color: black; /* Keep the same text color */
+    padding: 3px; /* Reduce padding for smaller screens */
+    border: 1px solid red; /* Reduce border thickness */
+    border-radius: 8px; /* Slightly decrease border radius */
+    font-size: 14px; /* Adjust font size for better fit */
+  }
+}
+
+
+
 .input-box {
   display: flex;
   justify-content: space-between;
@@ -1156,6 +1170,34 @@ button {
   font-size: var(--font-bold);
 }
 
+@media (max-width: 600px) {
+  .chart-button{
+    padding: 10px 6px;
+    text-align: right;
+    width: 80%; /* Adjust width as needed */
+    margin: 10px auto; /* Center horizontally with margin */
+    box-sizing: border-box;
+    font-size: large;
+  }
+
+
+  .chat-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons vertically */
+  }
+}
+
+@media (max-width: 600px) {
+  .chart-button1,
+  .chart-button0 {
+    padding: 10px 6px;
+    text-align: right;
+    width: 80%; /* Adjust width as needed */
+    margin: 10px auto; /* Center horizontally with margin */
+    box-sizing: border-box;
+    font-size: large;
+  }
+}
 .normal-chat{
   color: var(--text-color);
   font-weight: bold;
@@ -1206,6 +1248,8 @@ button {
   text-align: right;
   font-size: var(--font-bold);
 }
+
+
 
 .chart-button:hover {
   background-color: #d1c4e9;
@@ -1266,6 +1310,8 @@ button {
   align-self: flex-start;
 }
 
+
+
 @media (max-width: 600px) {
   .chatbot_container {
     width: 100%;
@@ -1277,7 +1323,7 @@ button {
   .chatbox {
     height: 350px;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     margin-top: 10px;
   }
 
@@ -1315,7 +1361,7 @@ button {
   .chart-button {
     padding: 10px 8px;
     margin: 10px;
-    font-size: 15px;
+    text-indent: 60px;
   }
 
   .chart-button1 {
@@ -1422,7 +1468,19 @@ button {
 }
 
 
-
+@media only screen and (max-width: 600px) {
+  .voiceass-custom-button {
+    background-color: #b3e0f2; /* Keep the same background color */
+    color: #fff; /* Keep the same text color */
+    border: 2px solid black; /* Keep the same border */
+    border-radius: 50%; /* Keep the button round */
+    padding: 15px; /* Reduce padding for smaller screens */
+    font-size: 14px; /* Decrease font size for better fit */
+    cursor: pointer; /* Keep the same cursor style */
+    display: inline-block; /* Ensure button stays inline */
+    width: 90px;
+  }
+}
 
 
 /* Responsive styles for mobile devices */
@@ -1718,6 +1776,23 @@ button {
   color: #000;
 }
 
+
+@media only screen and (min-width: 768px) {
+  .login-form,
+  .signup-form {
+    /* Example additional styles for larger screens */
+    max-width: 500px;
+    margin: 0 auto; /* Center align the forms */
+  }
+
+  .form-group input,
+  .form-group button {
+    /* Example larger input and button sizes */
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
 /* Center the modal on smaller screens */
 @media screen and (max-width: 600px) {
   .modal {
@@ -1777,4 +1852,52 @@ button {
 
 .suggestion:hover {
   background-color: #f0f0f0;
+}
+
+.upcoming-features-section {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.upcoming-features-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.upcoming-feature-item {
+  
+  border: 1px solid var(--text-color);
+  border-radius: 8px;
+  padding: 15px;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.upcoming-feature-title {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.upcoming-feature-icon {
+  margin-bottom: 10px;
+}
+
+.upcoming-features-heading{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .upcoming-features-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .upcoming-features-container {
+      grid-template-columns: 1fr;
+  }
 }
