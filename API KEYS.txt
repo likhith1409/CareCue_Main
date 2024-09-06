@@ -1,2 +1,0 @@
-OpenAiApi= Open Ai api key
-newsapi = News Api key
